@@ -76,7 +76,7 @@ h5{
 	font-size:1 rem;
 }
 
-a{
+a{/*Si lavora sui link*/
 	color:var(--color-white);  /*"a" sta per la dichiarazione di stile in tutto l'html */
 }
 
@@ -112,13 +112,13 @@ img{
 /*========================================NAVBAR====================================*/
 
 nav{
-	background: red;
+	background: transparent;
 	width: 100vw; /*Indica la grandezza dello schermo che andrà ad occupare non mettiamo px*/
 	height: 5rem; /*1rem = 16px    5=80*/
 	position: fixed; /*rimane li anche se scrolliamo*/
 	top:0; /*DEVE stare sempre in alto*/
 	z-index:11;/*Controlla la sovrapposizione più alto è meno si trova sotto ad un altro elemento 11 perchè sta sopra l'header*/
-	
+	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);/*ombra della navbar*/
 }
 
 .nav__container{
@@ -129,6 +129,19 @@ nav{
 		padding: 0 2rem; /*se lo tolgo il logo espansione nella navbar e attaccato verso sinistra*/
 }
 
+.nav__container .logo{
+	float:center;
+	font-size: 1.6rem;
+}
+
+.nav__container h4 {
+	display: inline-block;
+	margin:0;
+	text-align:left;
+	font-size:1.6 rem;
+	color: var(--color-white);
+}
+
 nav button{
 	display: none; /*le icone menu ed uscita le vogliamo solo su tablet e cellulari non su pc*/
 }
@@ -137,6 +150,7 @@ nav button{
 	display:flex;
 	align-items: center;
 	gap: 4rem;
+	
 	
 }
 

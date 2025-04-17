@@ -24,7 +24,7 @@
 	/*Dimensioni dei contenitori a seconda dello schermo */
 	--container-widht-lg:76%;
 	--container-width-md:90%;
-	--container-widht-sm:94%;
+	--container-width-sm:94%;
 	/*Stile di animazione morbida effetto dolce che poi rallenta */
 	--transition: all 400ms ease;
 	
@@ -35,4 +35,116 @@ font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  line-height:1.7;
+  color: var(--color-white);/*cambia colore icone menu*/
+  background: var(--color-bg);
+}
+
+.container{
+	width: var(--container-width-lg);
+	margin: 0 auto;
+}
+
+section{
+	padding: 6rem 0; /*rem sta per sopra e sotto valore verticale mentre 0 è il valore orizzontale*/
+	
+}
+
+section h2{
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+h1, h3, h4, h5 {
+	line-height: 1.2
+}
+
+h1{
+	font-size: 2.4 rem;
+}
+
+h2{
+	font-size: 2 rem;
+}
+h3{
+	font-size:1.3 rem;
+}
+h4{
+	font-size:1.6rem;
+}
+h5{
+	font-size:1 rem;
+}
+
+a{
+	color:var(--color-white);  /*"a" sta per la dichiarazione di stile in tutto l'html */
+}
+
+img{
+	width: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.btn{
+	display:inline-block;
+	background: var(--color-white);
+	color: var(--color-black);
+	padding: 1rem 2rem;
+	border: 1px solid trasparent;
+	font-weight: 500;
+	transition: var(--transition);
+}
+
+.btn:hover{
+	background: trasparent;
+	color: var(--color-white);
+	border-color: var(--color-white);
+	
+}
+
+.btn-primary{
+	background: var(--color-danger);
+	color: var(--color-white);
+	
+}
+
+/*========================================NAVBAR====================================*/
+
+nav{
+	background: red;
+	width: 100vw; /*Indica la grandezza dello schermo che andrà ad occupare non mettiamo px*/
+	height: 5rem; /*1rem = 16px    5=80*/
+	position: fixed; /*rimane li anche se scrolliamo*/
+	top:0; /*DEVE stare sempre in alto*/
+	z-index:11;/*Controlla la sovrapposizione più alto è meno si trova sotto ad un altro elemento 11 perchè sta sopra l'header*/
+	
+}
+
+.nav__container{
+		height:100%;
+		display:flex; /*elemento flessibile in modo da allineare facilmente su riga e colonna*/
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 2rem; /*se lo tolgo il logo espansione nella navbar e attaccato verso sinistra*/
+}
+
+nav button{
+	display: none; /*le icone menu ed uscita le vogliamo solo su tablet e cellulari non su pc*/
+}
+
+.nav__menu{
+	display:flex;
+	align-items: center;
+	gap: 4rem;
+	
+}
+
+.nav__menu a{/*con a ci riferiamo a i link nell'html (a href)*/
+	font-size:0.8rem;/*nello specifico qui stiamo decidendo la grandezza dei link home,noi,corsi,contatti*/
+	transition: all 400ms ease; /*da un effetto piu pulito quando si passa il mouse sopra, si può usare anche linear ma io preferisco cosi*/
+}
+
+.nav__menu a:hover{
+	color: var(--color-bg2);/*quando passi il mouse sopra il testo cambia colore */
 }

@@ -1,206 +1,292 @@
-*{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0; /*rimuove bordo messa a fuoco quando passi il mouse sopra*/
-	text-decoration: none;/*rimuove decorazioni testo come sottolineatura*/
-	list-style: none;/*rimuove i puntini sulle liste non ordinate "ul,ol"*/
-	box-sizing: border-box;/*imposta il calcolo della lunghezza e larghezza inclusi i padding*/
-	}
-	
-:root{
-	--color-primary: #6c63ff;
-	--color-success:#00bf8e;
-	--color-warning:#f7c94b;
-	--color-danger:#f75842;
-	--color-danger-variant:rgba(247,88,66,0.4);
-	--color-white:#fff;
-	--color-light:rgba(255,255,255,0.7);
-	--color-black:#000;
-	--color-bg:#1f2641;
-	--color-bg1:#2e3267;
-	--color-bg2:#424890;
-	
-	/*Dimensioni dei contenitori a seconda dello schermo */
-	--container-widht-lg:76%;
-	--container-width-md:90%;
-	--container-width-sm:94%;
-	/*Stile di animazione morbida effetto dolce che poi rallenta */
-	--transition: all 400ms ease;
-	
+/* Reset di base per garantire uniformità tra i browser */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0; /* Rimuove il bordo di messa a fuoco */
+  text-decoration: none; /* Rimuove decorazioni testo come sottolineatura */
+  list-style: none; /* Rimuove i puntini sulle liste non ordinate "ul,ol" */
+  box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
 }
 
-body{
-font-family: "Montserrat", sans-serif;
+/* Variabili CSS per una gestione centralizzata dei colori e dimensioni */
+:root {
+  /* Colori primari */
+  --color-primary: #2C3E50; /* Blu scuro: professionalità e fiducia */
+  --color-secondary: #18BC9C; /* Verde acqua: equilibrio e freschezza */
+  --color-accent: #F39C12; /* Arancio: energia e attenzione */
+  --color-white: #FFFFFF;
+  --color-light: #ECF0F1; /* Grigio chiaro: leggerezza */
+  --color-dark: #34495E; /* Blu notte: profondità */
+  --color-bg: #F5F5F5; /* Sfondo generale: neutro e rilassante */
+
+  /* Dimensioni dei contenitori a seconda dello schermo */
+  --container-width-lg: 76%;
+  --container-width-md: 90%;
+  --container-width-sm: 94%;
+
+  /* Stile di animazione morbida effetto dolce che poi rallenta */
+  --transition: all 400ms ease;
+}
+
+/* Stile base del corpo del documento */
+body {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  line-height:1.7;
-  color: var(--color-black);/*cambia colore icone menu*/
-  background: var(--color-white);
+  line-height: 1.7;
+  color: var(--color-dark); /* Colore del testo principale */
+  background: var(--color-bg); /* Sfondo generale */
 }
 
-.container{
-	width: var(--container-width-lg);
-	margin: 0 auto;
+/* Contenitore principale con larghezza variabile */
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-section{
-	padding: 6rem 0; /*rem sta per sopra e sotto valore verticale mentre 0 è il valore orizzontale*/
-	
+/* Sezioni con padding verticale */
+section {
+  padding: 6rem 0; /* 6rem sopra e sotto, 0 ai lati */
 }
 
-section h2{
-	text-align: center;
-	margin-bottom: 4rem;
+/* Titoli delle sezioni centrati con margine inferiore */
+section h2 {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
+/* Stili per i titoli */
 h1, h3, h4, h5 {
-	line-height: 1.2
+  line-height: 1.2;
 }
 
-h1{
-	font-size: 2.4 rem;
+h1 {
+  font-size: 2.4rem;
 }
 
-h2{
-	font-size: 2 rem;
-}
-h3{
-	font-size:1.3 rem;
-}
-h4{
-	font-size:1.6rem;
-}
-h5{
-	font-size:1 rem;
+h2 {
+  font-size: 2rem;
 }
 
-a{/*Si lavora sui link*/
-	color:var(--color-black);  /*"a" sta per la dichiarazione di stile in tutto l'html */
+h3 {
+  font-size: 1.3rem;
 }
 
-img{
-	width: 100%;
-	display: block;
-	object-fit: cover;
+h4 {
+  font-size: 1.6rem;
 }
 
-.btn{
-	display:inline-block;
-	background: var(--color-white);
-	color: var(--color-black);
-	padding: 1rem 2rem;
-	border: 1px solid trasparent;
-	font-weight: 500;
-	transition: var(--transition);
+h5 {
+  font-size: 1rem;
 }
 
-.btn:hover{
-	background: trasparent;
-	color: var(--color-black);
-	border-color: var(--color-white);
-	
+/* Stile per i link */
+a {
+  color: var(--color-primary); /* Colore dei link */
 }
 
-.btn-primary{
-	background: var(--color-danger);
-	color: var(--color-white);
-	margin-left: 15rem; /*se metto padding il bottone rimane attaccato al bordo sinistro dello schermo*/
-	
+/* Stile per le immagini */
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Stile base per i bottoni */
+.btn {
+  display: inline-block;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  font-weight: 500;
+  transition: var(--transition);
+  border-radius: 0.5rem; /* Angoli arrotondati */
+}
+
+/* Effetto hover per i bottoni */
+.btn:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+/* Bottone primario con margine superiore e sinistro */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  margin-top: 1rem; /* Spazio dal paragrafo sopra */
+  margin-left: 15rem; /* Spazio dal bordo sinistro */
 }
 
 /*========================================NAVBAR====================================*/
 
-nav{
-	background: var(--color-transparent);
-	width: 100vw; /*Indica la grandezza dello schermo che andrà ad occupare non mettiamo px*/
-	height: 5rem; /*1rem = 16px    5=80*/
-	position: fixed; /*rimane li anche se scrolliamo*/
-	top:0; /*DEVE stare sempre in alto*/
-	z-index:11;/*Controlla la sovrapposizione più alto è meno si trova sotto ad un altro elemento 11 perchè sta sopra l'header*/
-	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .1);/*ombra della navbar*/
+/* Barra di navigazione fissa in alto */
+nav {
+  background: var(--color-white);
+  width: 100vw; /* Larghezza pari alla finestra */
+  height: 5rem; /* Altezza fissa */
+  position: fixed; /* Rimane visibile durante lo scroll */
+  top: 0; /* Posizionata in alto */
+  z-index: 11; /* Sovrapposizione sopra altri elementi */
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .1); /* Ombra della navbar */
 }
 
-.nav__container{
-		height:100%;
-		display:flex; /*elemento flessibile in modo da allineare facilmente su riga e colonna*/
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 2rem; /*se lo tolgo il logo espansione nella navbar e attaccato verso sinistra*/
+/* Contenitore della navbar con spaziatura interna */
+.nav__container {
+  height: 100%;
+  display: flex; /* Elementi flessibili per allineamento */
+  justify-content: space-between; /* Spazio tra logo e menu */
+  align-items: center;
+  padding: 0 2rem; /* Spaziatura orizzontale */
 }
 
-.nav__container .logo{
-	float:center;
-	font-size: 1.6rem;
+/* Stile per il logo */
+.nav__container .logo {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  font-weight: bold;
 }
 
+/* Stile per il titolo accanto al logo */
 .nav__container h4 {
-	display: inline-block;
-	margin:0;
-	text-align:left;
-	font-size:1.6 rem;
-	color: var(--color-white);
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+  font-size: 1.6rem;
+  color: var(--color-primary);
 }
 
-.logo {
-	color: var(--color-black); /* o qualsiasi altro colore */
-	font-weight: bold;
-	
+/* Nasconde il bottone del menu su dispositivi grandi */
+nav button {
+  display: none; /* Visibile solo su tablet e cellulari */
 }
 
-
-nav button{
-	display: none; /*le icone menu ed uscita le vogliamo solo su tablet e cellulari non su pc*/
+/* Menu di navigazione con spaziatura tra i link */
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
-.nav__menu{
-	display:flex;
-	align-items: center;
-	gap: 4rem;
-	
-	
+/* Stile per i link del menu */
+.nav__menu a {
+  font-size: 0.8rem;
+  transition: var(--transition);
+  color: var(--color-dark);
 }
 
-.nav__menu a{/*con a ci riferiamo a i link nell'html (a href)*/
-	font-size:0.8rem;/*nello specifico qui stiamo decidendo la grandezza dei link home,noi,corsi,contatti*/
-	transition: all 400ms ease; /*da un effetto piu pulito quando si passa il mouse sopra, si può usare anche linear ma io preferisco cosi*/
-	color: var(--color-black);
+/* Effetto hover per i link del menu */
+.nav__menu a:hover {
+  color: var(--color-accent);
 }
-
-.nav__menu a:hover{
-	color: var(--color-bg2);/*quando passi il mouse sopra il testo cambia colore */
-}
-
 
 /*========================================HEADER====================================*/
 
-header{
-	position: relative;
-	top: 5rem;
-	overflow: hidden;
-	/*height: 70vh;*/
-	margin-bottom: 5 rem;
-	z-index:4
-}
-.header__right-image img {
-	width: 40%;
-	height: 40%;
-	object-fit: contain;
+/* Sezione header con margine inferiore */
+header {
+  position: relative;
+  top: 5rem;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  z-index: 4;
 }
 
-.header__container{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	gap: 30rem; /*Distanza fra testo ed immagine*/
-	
+/* Immagine a destra nell'header */
+.header__right-image img {
+  width: 40%;
+  height: 40%;
+  object-fit: contain;
+  justify-self: center; /*lo uso per spostare l'immagine perchè se uso il padding l'immagine si rimpicciolisce*/
 }
-.header__left h1{
-	color:red;
-	padding-left: 3rem;
+
+/* Contenitore dell'header con griglia */
+.header__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Due colonne di uguale larghezza */
+  align-items: center;
+  gap: 4rem; /* Distanza fra testo ed immagine */
+  padding: 0 2rem;
 }
-.header__left p{
-	margin:1rem 0 2.4rem; /*top/right/bottom/left al posto di scrivere margin-top margin right ...*/
-	padding-left: 3rem;
+
+/* Titolo nell'header */
+.header__left h1 {
+  color: var(--color-primary);
 }
+
+/* Paragrafo nell'header */
+.header__left p {
+  margin: 1rem 0 2.4rem; /* Margini superiore, orizzontali e inferiore */
+}
+
+/*========================================FINE DELL'HEADER====================================*/
+
+/*========================================CATEGORIE====================================*/
+
+/* Sezione categorie con sfondo chiaro */
+.categories {
+  background: var(--color-light);
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+/* Titolo delle categorie */
+.categories h1 {
+  line-height: 1;
+  margin-bottom: 3rem;
+  color: var(--color-primary);
+}
+
+/* Contenitore delle categorie con griglia */
+.categories__container {
+  display: grid;
+  grid-template-columns: 40% 60%; /* Lato sinistro e destro */
+  gap: 4rem; /* Distanza fra i 2 testi */
+}
+
+/* Lato sinistro delle categorie con margine destro */
+.categories__left {
+  margin-right: 4rem; /* Allontana il bottone */
+}
+
+/* Paragrafo nel lato sinistro delle categorie */
+.categories__left p {
+  margin: 1rem 0 2rem; /* Allontana il bottone */
+}
+
+/* Lato destro delle categorie con griglia */
+.categories__right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem; /* Distanza tra le categorie */
+  padding: 2rem;
+  margin-right: 2rem; /* Allontana dal bordo destro */
+}
+
+/* Singola categoria con stile */
+.category {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 2rem;
+  transition: var(--transition);
+  width: 100%; /* Rimanere all'interno del contenitore */
+  box-sizing: border-box; /* Include il padding nella larghezza complessiva */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Effetto hover per la categoria */
+.category:hover {
+  box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/*
+/ Colori diversi per le icone delle categorie /
+.category:nth-child(2) .category__icon {
+  color: var(--color-accent);
+}
+ QUESTO CODICE è SE VOLESSI CAMBIARE COLORE AD UNA SINGOLA ICONA ALL'INTERNO DELLA CATEGORIA NELLO SPECIFICO QUESTA è GRAPHICVS DESIGN
+*/
